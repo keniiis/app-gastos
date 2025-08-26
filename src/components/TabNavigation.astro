@@ -1,12 +1,24 @@
 ---
 ---
 
-<div class="mb-8">
-  <div class="tab">
-    <button class="tablinks active" data-tab="gastos">Gastos y Suscripciones</button>
-    <button class="tablinks" data-tab="perfiles">Perfiles de Ahorro</button>
-    <button class="tablinks" data-tab="calculadora">Calculadora de Ahorro</button>
-    <button class="tablinks" data-tab="calendario">Calendario de Ahorro</button>
+<div class="mb-8" data-tabs-root>
+  <div class="inline-flex h-10 items-center justify-center rounded-md bg-muted p-1 text-muted-foreground w-full">
+    <button class="tablinks active inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm" data-tab="gastos">
+      <i class="fas fa-wallet mr-2"></i>
+      Gastos y Suscripciones
+    </button>
+    <button class="tablinks inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm" data-tab="perfiles">
+      <i class="fas fa-users mr-2"></i>
+      Perfiles de Ahorro
+    </button>
+    <button class="tablinks inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm" data-tab="calculadora">
+      <i class="fas fa-calculator mr-2"></i>
+      Calculadora
+    </button>
+    <button class="tablinks inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm" data-tab="calendario">
+      <i class="fas fa-calendar mr-2"></i>
+      Calendario
+    </button>
   </div>
 </div>
 
@@ -22,7 +34,7 @@
 
     // Quitar la clase activa
     document.querySelectorAll<HTMLButtonElement>('.tablinks').forEach((btn) => {
-      btn.classList.remove('active');
+      btn.classList.remove('active', 'bg-background', 'text-foreground', 'shadow-sm');
     });
 
     // Mostrar la pestaña seleccionada
@@ -31,7 +43,7 @@
 
     // Marcar botón como activo
     const btn = document.querySelector<HTMLButtonElement>(`[data-tab="${tabName}"]`);
-    if (btn) btn.classList.add('active');
+    if (btn) btn.classList.add('active', 'bg-background', 'text-foreground', 'shadow-sm');
   }
 
   // Delegación de eventos

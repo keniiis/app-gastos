@@ -1,6 +1,50 @@
 ---
 ---
 
+<div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+    <div class="flex flex-col space-y-1.5 p-6">
+        <h2 class="text-2xl font-semibold leading-none tracking-tight flex items-center">
+            <i class="fas fa-plus-circle text-primary mr-2"></i>
+            Agregar Gasto
+        </h2>
+    </div>
+    <div class="p-6 pt-0">
+        <form id="gastoForm" class="space-y-4">
+            <div class="space-y-2">
+                <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Descripción</label>
+                <input type="text" id="gastoDescripcion" required
+                       class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
+            </div>
+            <div class="space-y-2">
+                <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Monto (CLP)</label>
+                <input type="text" id="gastoMonto" required
+                       placeholder="ej: 40.800"
+                       class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
+            </div>
+            <div class="space-y-2">
+                <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Categoría</label>
+                <select id="gastoCategoria" required
+                        class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
+                    <option value="">Seleccionar</option>
+                    <option value="Alimentación">Alimentación</option>
+                    <option value="Transporte">Transporte</option>
+                    <option value="Entretenimiento">Entretenimiento</option>
+                    <option value="Servicios">Servicios</option>
+                    <option value="Salud">Salud</option>
+                    <option value="Educación">Educación</option>
+                    <option value="Otros">Otros</option>
+                </select>
+            </div>
+            <button type="submit" class="w-full inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
+                <i class="fas fa-plus mr-2"></i>
+                Agregar Gasto
+            </button>
+        </form>
+    </div>
+</div>
+
+<!-- Versión anterior comentada para referencia -->
+<!--
 <div class="bg-white rounded-xl shadow p-6">
     <h2 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
         <i class="fas fa-plus-circle text-green-500 mr-2"></i>
@@ -36,4 +80,3 @@
             Agregar Gasto
         </button>
     </form>
-</div>

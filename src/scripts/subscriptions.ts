@@ -44,7 +44,7 @@ function agregarSuscripcion(e: Event): void {
     
     const selectTrigger = document.getElementById('selectTrigger');
     if (selectTrigger) {
-        selectTrigger.innerHTML = '<i class="fas fa-chevron-down text-gray-400"></i><span>Seleccionar servicio</span>';
+        selectTrigger.innerHTML = '<span>Seleccionar servicio</span><i class="fas fa-chevron-down text-muted-foreground"></i>';
     }
     
     document.querySelectorAll('.select-option').forEach(opt => {
@@ -65,20 +65,20 @@ function mostrarSuscripciones(): void {
     suscripcionesList.innerHTML = '';
     
     if (window.suscripciones.length === 0) {
-        suscripcionesList.innerHTML = '<p class="text-gray-500 text-center py-4">No hay suscripciones registradas</p>';
+        suscripcionesList.innerHTML = '<p class="text-muted-foreground text-center py-4">No hay suscripciones registradas</p>';
         return;
     }
     
     window.suscripciones.forEach(suscripcion => {
         const suscripcionElement = document.createElement('div');
-        suscripcionElement.className = 'flex justify-between items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition';
+        suscripcionElement.className = 'flex justify-between items-center p-3 bg-muted/50 rounded-lg hover:bg-muted transition-colors';
         
         // Determinar el ícono o imagen según el servicio
         let iconoHtml = '';
         if (suscripcion.imagen) {
-            iconoHtml = `<img src="${suscripcion.imagen}" alt="${suscripcion.servicio}" class="w-6 h-6 object-contain mr-2" onerror="this.onerror=null; this.src=''; this.className='fas fa-globe text-purple-500 mr-2';">`;
+            iconoHtml = `<img src="${suscripcion.imagen}" alt="${suscripcion.servicio}" class="service-icon mr-2" onerror="this.onerror=null; this.src=''; this.className='fas fa-globe text-primary mr-2';">`;
         } else {
-            iconoHtml = '<i class="fas fa-globe text-purple-500 mr-2"></i>';
+            iconoHtml = '<i class="fas fa-globe text-primary mr-2"></i>';
         }
         
         suscripcionElement.innerHTML = `
@@ -87,11 +87,11 @@ function mostrarSuscripciones(): void {
                     ${iconoHtml}
                     ${suscripcion.servicio}
                 </p>
-                <p class="text-sm text-gray-500">Renovación: ${suscripcion.fecha}</p>
+                <p class="text-sm text-muted-foreground">Renovación: ${suscripcion.fecha}</p>
             </div>
             <div class="flex items-center">
-                <span class="font-bold text-purple-600 mr-3">$${window.formatearCLP(suscripcion.monto)}</span>
-                <button onclick="eliminarSuscripcion(${suscripcion.id})" class="text-red-500 hover:text-red-700">
+                <span class="font-bold text-primary mr-3">$${window.formatearCLP(suscripcion.monto)}</span>
+                <button onclick="eliminarSuscripcion(${suscripcion.id})" class="text-destructive hover:text-destructive/80 transition-colors">
                     <i class="fas fa-trash-alt"></i>
                 </button>
             </div>

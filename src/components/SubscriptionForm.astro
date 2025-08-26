@@ -1,6 +1,81 @@
 ---
 ---
 
+<div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+    <div class="flex flex-col space-y-1.5 p-6">
+        <h2 class="text-2xl font-semibold leading-none tracking-tight flex items-center">
+            <i class="fas fa-plus-circle text-primary mr-2"></i>
+            Agregar Suscripción
+        </h2>
+    </div>
+    <div class="p-6 pt-0">
+        <form id="suscripcionForm" class="space-y-4">
+            <div class="space-y-2">
+                <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Servicio</label>
+                <div class="custom-select">
+                    <div class="select-trigger flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" id="selectTrigger">
+                        <span>Seleccionar servicio</span>
+                        <i class="fas fa-chevron-down text-muted-foreground"></i>
+                    </div>
+                    <div class="select-options absolute z-50 max-h-96 min-w-[8rem] overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-md hidden" id="selectOptions">
+                        <div class="select-option relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none hover:bg-accent hover:text-accent-foreground" data-value="Netflix" data-image="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" alt="Netflix" class="service-icon mr-2">
+                            <span>Netflix</span>
+                        </div>
+                        <div class="select-option relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none hover:bg-accent hover:text-accent-foreground" data-value="Spotify" data-image="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" alt="Spotify" class="service-icon mr-2">
+                            <span>Spotify</span>
+                        </div>
+                        <div class="select-option relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none hover:bg-accent hover:text-accent-foreground" data-value="ChatGPT" data-image="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT" class="service-icon mr-2">
+                            <span>ChatGPT</span>
+                        </div>
+                        <div class="select-option relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none hover:bg-accent hover:text-accent-foreground" data-value="Amazon Prime" data-image="https://upload.wikimedia.org/wikipedia/commons/7/79/Amazon_Prime_logo.svg">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/79/Amazon_Prime_logo.svg" alt="Amazon Prime" class="service-icon mr-2">
+                            <span>Amazon Prime</span>
+                        </div>
+                        <div class="select-option relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none hover:bg-accent hover:text-accent-foreground" data-value="YouTube Premium" data-image="https://upload.wikimedia.org/wikipedia/commons/6/6a/YouTube_Premium_logo.svg">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/YouTube_Premium_logo.svg" alt="YouTube Premium" class="service-icon mr-2">
+                            <span>YouTube Premium</span>
+                        </div>
+                        <div class="select-option relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none hover:bg-accent hover:text-accent-foreground" data-value="Disney+" data-image="https://upload.wikimedia.org/wikipedia/commons/3/3e/Disney%2B_logo.svg">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Disney%2B_logo.svg" alt="Disney+" class="service-icon mr-2">
+                            <span>Disney+</span>
+                        </div>
+                        <div class="select-option relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none hover:bg-accent hover:text-accent-foreground" data-value="Otro">
+                            <i class="fas fa-globe text-primary service-icon mr-2"></i>
+                            <span>Otro</span>
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" id="suscripcionServicio" required>
+            </div>
+            <div id="otroServicioDiv" class="hidden space-y-2">
+                <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Nombre del servicio</label>
+                <input type="text" id="otroServicio" 
+                       class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
+            </div>
+            <div class="space-y-2">
+                <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Monto Mensual (CLP)</label>
+                <input type="text" id="suscripcionMonto" required
+                       placeholder="ej: 40.800"
+                       class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
+            </div>
+            <div class="space-y-2">
+                <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Fecha de Renovación</label>
+                <input type="date" id="suscripcionFecha" required
+                       class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
+            </div>
+            <button type="submit" class="w-full inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
+                <i class="fas fa-plus mr-2"></i>
+                Agregar Suscripción
+            </button>
+        </form>
+    </div>
+</div>
+
+<!-- Versión anterior comentada para referencia -->
+<!--
 <div class="bg-white rounded-xl shadow p-6">
     <h2 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
         <i class="fas fa-plus-circle text-purple-500 mr-2"></i>
@@ -67,4 +142,3 @@
             Agregar Suscripción
         </button>
     </form>
-</div>

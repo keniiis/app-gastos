@@ -58,13 +58,13 @@ document.addEventListener('DOMContentLoaded', function() {
     if (selectTrigger && selectOptions) {
         // Abrir/cerrar el select
         selectTrigger.addEventListener('click', function() {
-            selectOptions.classList.toggle('show');
+            selectOptions.classList.toggle('hidden');
         });
         
         // Cerrar el select al hacer clic fuera
         document.addEventListener('click', function(e) {
             if (!(e.target as Element).closest('.custom-select')) {
-                selectOptions.classList.remove('show');
+                selectOptions.classList.add('hidden');
             }
         });
         
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 
                 // Cerrar el select
-                selectOptions.classList.remove('show');
+                selectOptions.classList.add('hidden');
             });
         });
     }

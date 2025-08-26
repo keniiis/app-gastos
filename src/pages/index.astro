@@ -14,7 +14,7 @@ import CalendarTab from '../components/CalendarTab.astro';
 ---
 
 <Layout>
-    <div class="container mx-auto px-4 py-8 max-w-6xl">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
         <Header />
         <TabNavigation />
 
@@ -43,7 +43,7 @@ import CalendarTab from '../components/CalendarTab.astro';
 
         <!-- Botón para limpiar datos -->
         <div class="text-center mt-8">
-            <button id="limpiarDatos" class="bg-red-500 hover:bg-red-600 text-white font-medium py-2 px-6 rounded-lg transition duration-200">
+            <button id="limpiarDatos" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-destructive text-destructive-foreground hover:bg-destructive/90 h-10 px-6 py-2">
                 <i class="fas fa-trash-alt mr-2"></i>
                 Limpiar Todos los Datos
             </button>
