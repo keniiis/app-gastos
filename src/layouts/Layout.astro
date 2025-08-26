@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Control de Gastos y Ahorro Familiar</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" is:inline></script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <slot />
+</body>
+</html>
+
+<style is:global>
+    /* Estilos para el select personalizado con iconos */
+    .custom-select {
+        position: relative;
+    }
+    
+    .select-trigger {
+        display: flex;
+        align-items: center;
+        padding: 0.75rem 1rem;
+        border: 1px solid #d1d5db;
+        border-radius: 0.5rem;
+        background-color: white;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+    
+    .select-trigger:hover {
+        border-color: #8b5cf6;
+    }
+    
+    .select-trigger i, .select-trigger img {
+        margin-right: 0.5rem;
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+    }
+    
+    .select-options {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        margin-top: 0.25rem;
+        border: 1px solid #d1d5db;
+        border-radius: 0.5rem;
+        background-color: white;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+        display: none;
+        max-height: 300px;
+        overflow-y: auto;
+    }
+    
+    .select-options.show {
+        display: block;
+    }
+    
+    .select-option {
+        display: flex;
+        align-items: center;
+        padding: 0.75rem 1rem;
+        cursor: pointer;
+        transition: background-color 0.2s;
+        user-select: none;
+    }
+    
+    .select-option:hover {
+        background-color: #f3f4f6;
+    }
+    
+    .select-option i, .select-option img {
+        margin-right: 0.5rem;
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+        pointer-events: none;
+    }
+    
+    .select-option.selected {
+        background-color: #ede9fe;
+        color: #7c3aed;
+    }
+    
+    /* Estilos para las pestañas */
+    .tab {
+        overflow: hidden;
+        border-bottom: 1px solid #ccc;
+        background-color: #f1f1f1;
+    }
+    
+    .tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        font-size: 16px;
+    }
+    
+    .tab button:hover {
+        background-color: #ddd;
+    }
+    
+    .tab button.active {
+        background-color: #8b5cf6;
+        color: white;
+    }
+    
+    .tabcontent {
+        display: none;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-top: none;
+    }
+    
+    /* Estilos para las tarjetas de perfil */
+    .profile-card {
+        transition: transform 0.3s;
+    }
+    
+    .profile-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    /* Estilos para el calendario */
+    .calendar-day {
+        min-height: 80px;
+    }
+    
+    .calendar-day.has-savings {
+        background-color: #dcfce7;
+    }
+    
+    .calendar-day.has-expense {
+        background-color: #fee2e2;
+    }
+    
+    /* Estilos para la calculadora */
+    .calculator-button {
+        transition: all 0.2s;
+    }
+    
+    .calculator-button:hover {
+        transform: scale(1.05);
+    }
+</style>

@@ -1,0 +1,85 @@
+---
+---
+
+<div id="perfiles" class="tabcontent">
+    <div class="mb-8">
+        <div class="flex justify-between items-center mb-6">
+            <h2 class="text-2xl font-bold text-gray-800">Perfiles de Ahorro Familiar</h2>
+            <button id="mostrarFormularioPerfilBtn" class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg transition duration-200">
+                <i class="fas fa-plus mr-2"></i>
+                Agregar Perfil
+            </button>
+        </div>
+
+        <!-- Formulario para agregar perfil (oculto por defecto) -->
+        <div id="formularioPerfil" class="hidden bg-white rounded-xl shadow p-6 mb-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Nuevo Perfil de Ahorro</h3>
+            <form id="perfilForm" class="space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-gray-700 mb-2">Nombre</label>
+                        <input type="text" id="perfilNombre" required
+                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Meta de Ahorro (CLP)</label>
+                        <input type="text" id="perfilMeta" required
+                               placeholder="ej: 100.000"
+                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-gray-700 mb-2">Imagen de Perfil</label>
+                    <div class="grid grid-cols-4 gap-3">
+                        <div class="profile-option cursor-pointer p-2 border-2 border-gray-200 rounded-lg text-center" data-avatar="boy">
+                            <i class="fas fa-boy text-3xl text-blue-500 mb-1"></i>
+                            <p class="text-sm">Niño</p>
+                        </div>
+                        <div class="profile-option cursor-pointer p-2 border-2 border-gray-200 rounded-lg text-center" data-avatar="girl">
+                            <i class="fas fa-girl text-3xl text-pink-500 mb-1"></i>
+                            <p class="text-sm">Niña</p>
+                        </div>
+                        <div class="profile-option cursor-pointer p-2 border-2 border-gray-200 rounded-lg text-center" data-avatar="cat">
+                            <i class="fas fa-cat text-3xl text-yellow-500 mb-1"></i>
+                            <p class="text-sm">Gato</p>
+                        </div>
+                        <div class="profile-option cursor-pointer p-2 border-2 border-gray-200 rounded-lg text-center" data-avatar="dog">
+                            <i class="fas fa-dog text-3xl text-brown-500 mb-1"></i>
+                            <p class="text-sm">Perro</p>
+                        </div>
+                        <div class="profile-option cursor-pointer p-2 border-2 border-gray-200 rounded-lg text-center" data-avatar="rocket">
+                            <i class="fas fa-rocket text-3xl text-purple-500 mb-1"></i>
+                            <p class="text-sm">Cohete</p>
+                        </div>
+                        <div class="profile-option cursor-pointer p-2 border-2 border-gray-200 rounded-lg text-center" data-avatar="star">
+                            <i class="fas fa-star text-3xl text-yellow-400 mb-1"></i>
+                            <p class="text-sm">Estrella</p>
+                        </div>
+                        <div class="profile-option cursor-pointer p-2 border-2 border-gray-200 rounded-lg text-center" data-avatar="heart">
+                            <i class="fas fa-heart text-3xl text-red-500 mb-1"></i>
+                            <p class="text-sm">Corazón</p>
+                        </div>
+                        <div class="profile-option cursor-pointer p-2 border-2 border-gray-200 rounded-lg text-center" data-avatar="crown">
+                            <i class="fas fa-crown text-3xl text-yellow-500 mb-1"></i>
+                            <p class="text-sm">Corona</p>
+                        </div>
+                    </div>
+                    <input type="hidden" id="perfilAvatar" required>
+                </div>
+                <div class="flex justify-end space-x-3">
+                    <button type="button" id="ocultarFormularioPerfilBtn" class="bg-gray-500 hover:bg-gray-600 text-white font-medium py-2 px-4 rounded-lg transition duration-200">
+                        Cancelar
+                    </button>
+                    <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg transition duration-200">
+                        Guardar Perfil
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Listado de perfiles -->
+        <div id="perfilesList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Los perfiles se agregarán aquí dinámicamente -->
+        </div>
+    </div>
+</div>

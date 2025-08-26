@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import TabNavigation from '../components/TabNavigation.astro';
+import ExpensesSummary from '../components/ExpensesSummary.astro';
+import ExpenseForm from '../components/ExpenseForm.astro';
+import SubscriptionForm from '../components/SubscriptionForm.astro';
+import ExpensesList from '../components/ExpensesList.astro';
+import SubscriptionsList from '../components/SubscriptionsList.astro';
+import ReportsCharts from '../components/ReportsCharts.astro';
+import ProfilesTab from '../components/ProfilesTab.astro';
+import CalculatorTab from '../components/CalculatorTab.astro';
+import CalendarTab from '../components/CalendarTab.astro';
+---
+
+<Layout>
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <Header />
+        <TabNavigation />
+
+        <!-- Contenido de la pestaña de Gastos y Suscripciones -->
+        <div id="gastos" class="tabcontent">
+            <ExpensesSummary />
+
+            <!-- Formularios -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
+                <ExpenseForm />
+                <SubscriptionForm />
+            </div>
+
+            <!-- Listados -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
+                <ExpensesList />
+                <SubscriptionsList />
+            </div>
+
+            <ReportsCharts />
+        </div>
+
+        <ProfilesTab />
+        <CalculatorTab />
+        <CalendarTab />
+
+        <!-- Botón para limpiar datos -->
+        <div class="text-center mt-8">
+            <button id="limpiarDatos" class="bg-red-500 hover:bg-red-600 text-white font-medium py-2 px-6 rounded-lg transition duration-200">
+                <i class="fas fa-trash-alt mr-2"></i>
+                Limpiar Todos los Datos
+            </button>
+        </div>
+    </div>
+</Layout>
+
+<!-- Scripts -->
+<script src="/src/scripts/app.js" is:inline></script>
+<script src="/src/scripts/expenses.js" is:inline></script>
+<script src="/src/scripts/subscriptions.js" is:inline></script>
+<script src="/src/scripts/charts.js" is:inline></script>
+<script src="/src/scripts/profiles.js" is:inline></script>
+<script src="/src/scripts/calculator.js" is:inline></script>
+<script src="/src/scripts/calendar.js" is:inline></script>
+<script src="/src/scripts/events.js" is:inline></script>

@@ -1,0 +1,70 @@
+---
+---
+
+<div class="bg-white rounded-xl shadow p-6">
+    <h2 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+        <i class="fas fa-plus-circle text-purple-500 mr-2"></i>
+        Agregar Suscripción
+    </h2>
+    <form id="suscripcionForm" class="space-y-4">
+        <div>
+            <label class="block text-gray-700 mb-2">Servicio</label>
+            <div class="custom-select">
+                <div class="select-trigger" id="selectTrigger">
+                    <i class="fas fa-chevron-down text-gray-400"></i>
+                    <span>Seleccionar servicio</span>
+                </div>
+                <div class="select-options" id="selectOptions">
+                    <div class="select-option" data-value="Netflix" data-image="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" alt="Netflix" class="w-6 h-6 mr-2">
+                        <span>Netflix</span>
+                    </div>
+                    <div class="select-option" data-value="Spotify" data-image="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" alt="Spotify" class="w-6 h-6 mr-2">
+                        <span>Spotify</span>
+                    </div>
+                    <div class="select-option" data-value="ChatGPT" data-image="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT" class="w-6 h-6 mr-2">
+                        <span>ChatGPT</span>
+                    </div>
+                    <div class="select-option" data-value="Amazon Prime" data-image="https://upload.wikimedia.org/wikipedia/commons/7/79/Amazon_Prime_logo.svg">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/79/Amazon_Prime_logo.svg" alt="Amazon Prime" class="w-6 h-6 mr-2">
+                        <span>Amazon Prime</span>
+                    </div>
+                    <div class="select-option" data-value="YouTube Premium" data-image="https://upload.wikimedia.org/wikipedia/commons/6/6a/YouTube_Premium_logo.svg">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/YouTube_Premium_logo.svg" alt="YouTube Premium" class="w-6 h-6 mr-2">
+                        <span>YouTube Premium</span>
+                    </div>
+                    <div class="select-option" data-value="Disney+" data-image="https://upload.wikimedia.org/wikipedia/commons/3/3e/Disney%2B_logo.svg">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Disney%2B_logo.svg" alt="Disney+" class="w-6 h-6 mr-2">
+                        <span>Disney+</span>
+                    </div>
+                    <div class="select-option" data-value="Otro">
+                        <i class="fas fa-globe text-purple-500"></i>
+                        <span>Otro</span>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" id="suscripcionServicio" required>
+        </div>
+        <div id="otroServicioDiv" class="hidden">
+            <label class="block text-gray-700 mb-2">Nombre del servicio</label>
+            <input type="text" id="otroServicio" 
+                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+        </div>
+        <div>
+            <label class="block text-gray-700 mb-2">Monto Mensual (CLP)</label>
+            <input type="text" id="suscripcionMonto" required
+                   placeholder="ej: 40.800"
+                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+        </div>
+        <div>
+            <label class="block text-gray-700 mb-2">Fecha de Renovación</label>
+            <input type="date" id="suscripcionFecha" required
+                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+        </div>
+        <button type="submit" class="w-full bg-purple-500 hover:bg-purple-600 text-white font-medium py-2 px-4 rounded-lg transition duration-200">
+            Agregar Suscripción
+        </button>
+    </form>
+</div>

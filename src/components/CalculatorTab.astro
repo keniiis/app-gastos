@@ -1,0 +1,75 @@
+---
+---
+
+<div id="calculadora" class="tabcontent">
+    <div class="bg-white rounded-xl shadow p-6 mb-6">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">Calculadora de Interés Compuesto</h2>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div>
+                <form id="calculadoraForm" class="space-y-4">
+                    <div>
+                        <label class="block text-gray-700 mb-2">Capital Inicial (CLP)</label>
+                        <input type="text" id="capitalInicial" value="10.000"
+                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Ahorro Mensual (CLP)</label>
+                        <input type="text" id="ahorroMensual" value="5.000"
+                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Tasa de Interés Anual (%)</label>
+                        <input type="number" id="tasaInteres" value="5" min="0" max="100" step="0.1"
+                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Período de Ahorro (años)</label>
+                        <input type="number" id="periodoAnios" value="10" min="1" max="50"
+                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                    <button type="button" id="calcularBtn" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg transition duration-200">
+                        Calcular
+                    </button>
+                </form>
+            </div>
+            
+            <div>
+                <div class="bg-blue-50 rounded-lg p-6">
+                    <h3 class="text-lg font-bold text-gray-800 mb-4">Resultados</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Capital Final:</span>
+                            <span class="font-bold" id="capitalFinal">$0</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Total Ahorrado:</span>
+                            <span class="font-bold" id="totalAhorrado">$0</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Intereses Generados:</span>
+                            <span class="font-bold" id="interesesGenerados">$0</span>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-200">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Meta de ahorro:</span>
+                                <input type="text" id="metaAhorro" placeholder="ej: 1.000.000"
+                                       class="w-32 px-3 py-1 border border-gray-300 rounded-lg text-right">
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div id="barraProgreso" class="bg-blue-600 h-2.5 rounded-full" style="width: 0%"></div>
+                            </div>
+                            <div class="flex justify-between text-sm text-gray-600 mt-1">
+                                <span>0%</span>
+                                <span id="porcentajeMeta">0%</span>
+                                <span>100%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
