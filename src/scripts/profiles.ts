@@ -83,11 +83,11 @@ function mostrarPerfiles(): void {
             </div>
             
             <div class="flex space-x-2">
-                <button onclick="agregarAhorro(${perfil.id})" class="flex-1 bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-3 rounded-lg transition duration-200 text-sm">
+                <button onclick="agregarAhorro(${perfil.id})" class="flex-1 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-3">
                     <i class="fas fa-plus mr-1"></i>
                     Ahorrar
                 </button>
-                <button onclick="eliminarPerfil(${perfil.id})" class="flex-1 bg-red-500 hover:bg-red-600 text-white font-medium py-2 px-3 rounded-lg transition duration-200 text-sm">
+                <button onclick="eliminarPerfil(${perfil.id})" class="flex-1 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-destructive text-destructive-foreground hover:bg-destructive/90 h-9 px-3">
                     <i class="fas fa-trash-alt mr-1"></i>
                     Eliminar
                 </button>
